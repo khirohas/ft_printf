@@ -4,7 +4,7 @@
 int		main(void)
 {
 	char			c_arg = 'c';
-	char			*s_arg = "hoge";
+	char			*s_arg = NULL;
 	void			*p_arg = s_arg;
 	int				d_arg = -42;
 	int				i_arg = -42;
