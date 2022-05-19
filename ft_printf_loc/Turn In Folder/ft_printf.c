@@ -1,10 +1,10 @@
 #include "ft_printf.h"
 
-int			ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	size_t	i;
-	ssize_t count;
+	ssize_t	count;
 
 	va_start(ap, format);
 	i = 0;
@@ -19,25 +19,18 @@ int			ft_printf(const char *format, ...)
 		}
 		if (format[i] == '%' && format[i + 1] == 'c')
 			count += process_c(va_arg(ap, int));
-
 		if (format[i] == '%' && format[i + 1] == 's')
 			count += process_s(va_arg(ap, char *));
-
 		if (format[i] == '%' && format[i + 1] == 'p')
 			count += process_p(va_arg(ap, void *));
-
 		if (format[i] == '%' && (format[i + 1] == 'i' || format[i + 1] == 'd'))
 			count += process_i_d(va_arg(ap, int));
-
 		if (format[i] == '%' && format[i + 1] == 'u')
 			count += process_u(va_arg(ap, unsigned int));
-
 		if (format[i] == '%' && format[i + 1] == 'x')
 			count += process_x(va_arg(ap, unsigned int));
-
 		if (format[i] == '%' && format[i + 1] == 'X')
 			count += process_X(va_arg(ap, unsigned int));
-
 		if (format[i] == '%' && format[i + 1] == '%')
 		{
 			ft_putchar_fd('%', 1);
@@ -54,3 +47,5 @@ int			ft_printf(const char *format, ...)
 	va_end(ap);
 	return ((int)count);
 }
+
+
