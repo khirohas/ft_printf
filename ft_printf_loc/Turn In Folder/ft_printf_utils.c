@@ -29,29 +29,29 @@ static unsigned long long	ft_putneg_fd(long long n, int fd)
 	return (n);
 }
 
-ssize_t	ft_putnbr_ret_count(long long n, const unsigned int base, char *base_set, int fd)
+ssize_t	ft_putnbr_ret_count(long long n, const unsigned int b, char *bs)
 {
 	unsigned long long		nb;
 	unsigned long long		exp;
 	ssize_t					count;
 
-	nb = ft_putneg_fd(n, fd);
+	nb = ft_putneg_fd(n, 1);
 	count = 0;
 	if (n < 0)
 		count = 1;
 	exp = 1;
-	while (exp <= nb / base)
-		exp *= base;
+	while (exp <= nb / b)
+		exp *= b;
 	while (exp > 0)
 	{
-		ft_putchar_fd(base_set[nb / exp % base], fd);
-		exp /= base;
+		ft_putchar_fd(bs[nb / exp % b], 1);
+		exp /= b;
 		count++;
 	}
 	return (count);
 }
 
-ssize_t	ft_putulong_ret_count(unsigned long long n, const unsigned int base, char *base_set, int fd)
+ssize_t	ft_putulong(unsigned long long n, const unsigned int b, char *bs)
 {
 	unsigned long long		nb;
 	unsigned long long		exp;
@@ -60,12 +60,12 @@ ssize_t	ft_putulong_ret_count(unsigned long long n, const unsigned int base, cha
 	nb = n;
 	count = 0;
 	exp = 1;
-	while (exp <= nb / base)
-		exp *= base;
+	while (exp <= nb / b)
+		exp *= b;
 	while (exp > 0)
 	{
-		ft_putchar_fd(base_set[nb / exp % base], fd);
-		exp /= base;
+		ft_putchar_fd(bs[nb / exp % b], 1);
+		exp /= b;
 		count++;
 	}
 	return (count);

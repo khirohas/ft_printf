@@ -11,7 +11,7 @@ ssize_t	process_p(void *p)
 	else
 	{
 		len = ft_putstr_fd_ret_count("0x", 1);
-		len += ft_putulong_ret_count((unsigned long long)p, 16, base, 1);
+		len += ft_putulong((unsigned long long)p, 16, base);
 	}
 	return (len);
 }

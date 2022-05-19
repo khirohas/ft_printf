@@ -10,8 +10,8 @@
 
 int		ft_printf(const char *arg, ...);
 ssize_t	ft_putstr_fd_ret_count(char *s, int fd);
-ssize_t	ft_putulong_ret_count(unsigned long long n, const unsigned int base, char *base_set, int fd);
-ssize_t	ft_putnbr_ret_count(long long n, const unsigned int base, char *base_set, int fd);
+ssize_t	ft_putulong(unsigned long long n, const unsigned int b, char *bs);
+ssize_t	ft_putnbr_ret_count(long long n, const unsigned int b, char *bs);
 ssize_t	process_c(int c);
 ssize_t	process_s(char *s);
 ssize_t	process_p(void *p);
