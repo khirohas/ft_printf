@@ -18,7 +18,7 @@ ssize_t	process_p(void *p);
 ssize_t	process_i_d(int	i);
 ssize_t	process_u(unsigned int n);
 ssize_t	process_x(unsigned int n);
-ssize_t	process_X(unsigned int n);
+ssize_t	process_capitalx(unsigned int n);
 ssize_t	process_perc(void);
 
 #endif

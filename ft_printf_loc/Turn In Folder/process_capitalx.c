@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-ssize_t	process_X(unsigned int n)
+ssize_t	process_capitalx(unsigned int n)
 {
 	ssize_t	len;
 
