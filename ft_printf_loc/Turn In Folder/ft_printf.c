@@ -1,9 +1,9 @@
 #include "ft_printf.h"
 
-size_t ft_output (const char *format, va_list ap){
-
-	size_t i;
-	size_t count;
+size_t	ft_output(const char *format, va_list ap)
+{
+	size_t	i;
+	size_t	count;
 
 	i = 0;
 	count = 0;
@@ -52,5 +52,3 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return ((int)count);
 }
-
-

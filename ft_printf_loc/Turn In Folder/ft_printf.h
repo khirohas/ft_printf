@@ -19,6 +19,6 @@ ssize_t	process_i_d(int	i);
 ssize_t	process_u(unsigned int n);
 ssize_t	process_x(unsigned int n);
 ssize_t	process_X(unsigned int n);
-ssize_t	process_perc();
+ssize_t	process_perc(void);
 
 #endif
