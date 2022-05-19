@@ -1,12 +1,10 @@
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
-{
-	va_list	ap;
-	size_t	i;
-	ssize_t	count;
+size_t ft_output (const char *format, va_list ap){
 
-	va_start(ap, format);
+	size_t i;
+	size_t count;
+
 	i = 0;
 	count = 0;
 	errno = 0;
@@ -32,10 +30,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%' && format[i + 1] == 'X')
 			count += process_X(va_arg(ap, unsigned int));
 		if (format[i] == '%' && format[i + 1] == '%')
-		{
-			ft_putchar_fd('%', 1);
-			count += 1;
-		}
+			count += process_perc();
 		if (format[i] == '%')
 		{
 			if (errno != 0)
@@ -44,6 +39,16 @@ int	ft_printf(const char *format, ...)
 				i = i + 2;
 		}
 	}
+	return (count);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list	ap;
+	ssize_t	count;
+
+	va_start(ap, format);
+	count = ft_output(format, ap);
 	va_end(ap);
 	return ((int)count);
 }

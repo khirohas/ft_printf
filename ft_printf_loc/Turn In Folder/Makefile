@@ -4,7 +4,7 @@ CC = gcc
 
 CFLAGS = -c -Wall -Wextra -Werror #-g3 -fsanitize=address -fsanitize=undefined
 
-SRCS = ft_printf.c ft_printf_utils.c process.c
+SRCS = ft_printf.c ft_printf_utils.c process_c.c process_i_d.c process_p.c process_perc.c process_s.c process_u.c process_x.c process_X.c
 OBJS	=	${SRCS:.c=.o}
 
 all: $(NAME)
@@ -14,17 +14,6 @@ $(NAME): $(OBJS)
 	cp libft/libft.a $(NAME)
 	$(CC) $(CFLAGS) $(SRCS)
 	ar -rcs $(NAME) $(OBJS)
-
-#makelibft: $(NAME)
-#	cd "$(PWD)/libft" && make
-
-
-#%.o: %.c
-#	$(CC) $(CFLAGS) -c $^ -o $@
-
-#$(NAME): $(OBJS)
-#	ar -rcs $(NAME) $(OBJS)
-
 
 clean:
 	$(MAKE) clean -C ./libft

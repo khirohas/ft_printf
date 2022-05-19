@@ -51,10 +51,7 @@ ssize_t	ft_putnbr_ret_count(long long n, const unsigned int base, char *base_set
 	return (count);
 }
 
-ssize_t	ft_putulong_ret_count(unsigned long long n, /
-		const unsigned int base, /
-		char *base_set, /
-		int fd)
+ssize_t	ft_putulong_ret_count(unsigned long long n, const unsigned int base, char *base_set, int fd)
 {
 	unsigned long long		nb;
 	unsigned long long		exp;
