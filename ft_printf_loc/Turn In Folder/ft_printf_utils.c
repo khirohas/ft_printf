@@ -1,20 +1,5 @@
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
-size_t	ft_strlen(char const *str)
-{
-	size_t	c;
-
-	c = 0;
-	while (str[c] != '\0')
-		c++;
-	return (c);
-}
-
 ssize_t	ft_putstr_fd_ret_count(char *s, int fd)
 {
 	size_t	len;

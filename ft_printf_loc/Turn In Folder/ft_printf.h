@@ -6,11 +6,9 @@
 # include <stdarg.h>
 # include <limits.h>
 # include <errno.h>
-//# include "libft.h"
+# include "./libft/libft.h"
 
 int	ft_printf(const char *, ...);
-void	ft_putchar_fd(char c, int fd);
-size_t	ft_strlen(char const *str);
 ssize_t	ft_putstr_fd_ret_count(char *s, int fd);
 //unsigned long long	ft_putneg_fd(long long n, int fd);
 ssize_t	ft_putnbr_ret_count_ulong(unsigned long long n, const unsigned int base, char *base_set, int fd);
